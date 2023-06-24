@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{
+      line-height:1.5;
+      background-image: url('/static/img/fondo.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-size:10px;
+    }
+    p {
+      color: blue;
+      background-color: white;
+    }
+    b {
+      color: blue;
+    }
+  </style>
+  <head>
+    <meta charset="utf-8">
+    <title>Reactividad VIH</title>
+    <!-- meta -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- styles -->
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+      rel="stylesheet"
+    >
+
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="">
+        <form action="/" method="POST">
+          <div class="field">
+            <br>
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <h1 class="title" align="center"><p>Reactividad a la Prueba de VIH</p></h1>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>
+            </table>
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <br><label class="label"><b>Tipo Brigada*</b></label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="tipo_brigada" name="tipo_brigada">
+                        <option value="1">BMU</option>
+                        <option value="2">MCC</option>
+                      </select>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <br><label class="label"><b>Lugar Abordaje*</b></label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="lugar_abordaje" name="lugar_abordaje">
+                        <option value="1">Bar</option>
+                        <option value="2">Calle</option>
+                        <option value="3">Casa</option>
+                        <option value="4">Discoteca</option>
+                        <option value="5">Local Comunal</option>
+                        <option value="6">MCC</option>
+                        <option value="7">Otro</option>
+                        <option value="8">Parque</option>
+                        <option value="9">Salón de Belleza</option>
+                        <option value="10">Salón de Video</option>
+                        <option value="11">Sauna</option>
+                        <option value="12">Zona de Trabajo</option>
+                      </select>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>            
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <br><label class="label"><b>Mes Abordado*</b></label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="mes_abordado" name="mes_abordado">
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                      </select>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 10%;"></td>                 
+              </tr>
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <br><label class="label"><b>Tipo Nacionalidad*</b></label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="tipo_nacionalidad" name="tipo_nacionalidad">
+                        <option value="1">Extranjero</option>
+                        <option value="2">Nacional</option>
+                      </select>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 10%;"></td>                 
+              </tr>                                  
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <br><label class="label"><b>Tipo Documento*</b></label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="tipo_documento" name="tipo_documento">
+                        <option value="1">Carné de Extranjería</option>
+                        <option value="2">DI del extranjero</option>
+                        <option value="3">DNI</option>
+                        <option value="4">Pasaporte</option>
+                        <option value="5">Sin documento</option> 
+                      </select>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr> 
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <br><label class="label"><b>Tipo Población*</b></label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="tipo_poblacion" name="tipo_poblacion">
+                        <option value="1">Gestante</option>
+                        <option value="2">HSH Trabajador Sexual</option>
+                        <option value="3">Hombre que tiene sexo con otro hombre</option>
+                        <option value="4">Mujer Transgénero</option>
+                        <option value="5">Mujer transgénero Trabajadora Sexual</option> 
+                        <option value="6">Población General</option> 
+                        <option value="7">Trabajador/a Sexual</option> 
+                        <option value="8">Trabajador/a de Salud</option> 
+                      </select>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>        
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <br><label class="label"><b>Estrato Social*</b></label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="estrato_social" name="estrato_social">
+                        <option value="1">Alto</option>
+                        <option value="2">Medio Alto</option>
+                        <option value="3">Medio</option>
+                        <option value="4">Medio Bajo</option>
+                        <option value="5">Bajo</option> 
+                      </select>
+                    </div>
+                  </div>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>                              
+            </table>
+            <br>
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <input type="submit" class="button is-primary is-fullwidth" style="font-size:13pt;padding:2px; border:1px solid blue; background-color:blue" value="Predecir">
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>
+            </table>
+          </div>
+        </form>
+        <br>
+          {% if predictions %}
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <label class="label" align="center" style="font-size:15pt;padding:2px"><p>Resultado de la Predicción</p></label>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>
+            </table>
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 10%;"></td>
+                <td style="width: 80%;">
+                  <label class="label" align="center" style="font-size:14pt;padding:2px"><p>{{ predictions }}</p></label>
+                </td>
+                <td style="width: 10%;"></td>
+              </tr>
+            </table>
+            
+            
+            <script>
+              selectElement('tipo_brigada', {{ tipo_brigada }})
+              selectElement('lugar_abordaje', {{ lugar_abordaje }})
+              selectElement('mes_abordado', {{ mes_abordado }})
+              selectElement('tipo_nacionalidad', {{ tipo_nacionalidad }})
+              selectElement('tipo_documento', {{ tipo_documento }})   
+              selectElement('tipo_poblacion', {{ tipo_poblacion }})
+              selectElement('estrato_social', {{ estrato_social }})                                                     
+              function selectElement(id, valueToSelect) {    
+                  let element = document.getElementById(id);
+                  element.value = valueToSelect;
+              }    
+            </script>
+          {% else %}
+            <p></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    </script>
+    {% block js %}{% endblock %}
+    <br>
+  </body>
+</html>
