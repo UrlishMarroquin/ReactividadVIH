@@ -199,9 +199,9 @@ def api_predict():
         Ynew = Modelo.predict(dataXnewDf)
 
         if Ynew[0] == 1:
-            Mensaje = 'Paciente con alta probabilidad de tener Reactividad Positiva en su Prueba de VIH'
+            Mensaje = 'Alta probabilidad de Reactividad Positiva en la Prueba de VIH'
         else:
-            Mensaje = 'Paciente con alta probabilidad de tener Reactividad Negativa en su Prueba de VIH'
+            Mensaje = 'Alta probabilidad de Reactividad Negativa en la Prueba de VIH'
 
         return jsonify( inputs=features,predictions=Mensaje)
 
